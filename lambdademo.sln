@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lambdademo", "lambdademo\lambdademo.csproj", "{16B81F85-F811-4504-8F87-5FFA117835F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lambdademo.Tests", "lambdademo.Tests\lambdademo.Tests.csproj", "{AF651CEE-E9A2-4A22-AA44-E4640101828F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16B81F85-F811-4504-8F87-5FFA117835F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B81F85-F811-4504-8F87-5FFA117835F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B81F85-F811-4504-8F87-5FFA117835F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B81F85-F811-4504-8F87-5FFA117835F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF651CEE-E9A2-4A22-AA44-E4640101828F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF651CEE-E9A2-4A22-AA44-E4640101828F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF651CEE-E9A2-4A22-AA44-E4640101828F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF651CEE-E9A2-4A22-AA44-E4640101828F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A12504CA-9F46-431E-BD61-ED31E3AA06B4}
+	EndGlobalSection
+EndGlobal
