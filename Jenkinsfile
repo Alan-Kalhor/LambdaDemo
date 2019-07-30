@@ -18,16 +18,16 @@ node {
 		sh "echo 'after git checkout ...'"		
 		sh "ls"
     }
-/*	
+	
 	stage('Build') {
-		sh "sudo $DOTNET_PATH/dotnet clean"	
-		sh "sudo $DOTNET_PATH/dotnet build --configuration Release"
+		sh "sudo $DOTNET_PATH/dotnet clean ${FUNCTION_NAME}"	
+		sh "sudo $DOTNET_PATH/dotnet build ${FUNCTION_NAME} --configuration Release"
 	}
 	
 	stage('Test') {
 		sh "sudo $DOTNET_PATH/dotnet test"
 	}
-*/	
+	
 
 	stage('Deploy') {
 		env.DOTNET_ROOT = "/home/ec2-user/dotnet"
