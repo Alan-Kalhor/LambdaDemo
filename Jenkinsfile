@@ -16,9 +16,8 @@ node {
     stage('Checkout'){
         checkout scm
 		sh "after git checkout ..."		
-		sh "ls"
     }
-	
+/*	
 	stage('Build') {
 		sh "sudo $DOTNET_PATH/dotnet clean"	
 		sh "sudo $DOTNET_PATH/dotnet build --configuration Release"
@@ -27,7 +26,7 @@ node {
 	stage('Test') {
 		sh "sudo $DOTNET_PATH/dotnet test"
 	}
-	
+*/	
 
 	stage('Deploy') {
 		env.DOTNET_ROOT = "/home/ec2-user/dotnet"
