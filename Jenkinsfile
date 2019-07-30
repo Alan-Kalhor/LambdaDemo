@@ -15,6 +15,8 @@ node {
 	
     stage('Checkout'){
         checkout scm
+		sh "after git checkout ..."		
+		sh "ls"
     }
 	
 	stage('Build') {
