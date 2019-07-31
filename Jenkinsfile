@@ -29,7 +29,7 @@ node {
 	}
 	
 	stage('Test') {
-		sh "sudo $DOTNET_PATH/dotnet test"
+		sh "sudo dotnet test"
 	}
 	
 
