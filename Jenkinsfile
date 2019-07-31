@@ -20,8 +20,12 @@ node {
     }
 	
 	stage('Build') {
-		sh "sudo $DOTNET_PATH/dotnet clean ${FUNCTION_NAME}"	
+/*		sh "sudo $DOTNET_PATH/dotnet clean ${FUNCTION_NAME}"	
 		sh "sudo $DOTNET_PATH/dotnet build ${FUNCTION_NAME} --configuration Release"
+*/
+		sh "sudo dotnet restore"	
+		sh "sudo dotnet clean"	
+		sh "sudo dotnet build --configuration Release"		
 	}
 	
 	stage('Test') {
