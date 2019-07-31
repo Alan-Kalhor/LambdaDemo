@@ -34,10 +34,10 @@ node {
 	
 
 	stage('Deploy') {
-/*	
-		env.DOTNET_ROOT = "/home/ec2-user/dotnet"
-		env.PATH = "$PATH:/home/ec2-user/dotnet"
-*/
+	
+		env.DOTNET_ROOT = "/usr/share/dotnet"
+		env.PATH = "$PATH:/usr/share/dotnet"
+
 		sh "sudo dotnet-lambda list-functions"
 		
 		sh "echo 'about to create s3'"		
