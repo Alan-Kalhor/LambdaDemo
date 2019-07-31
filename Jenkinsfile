@@ -1,8 +1,6 @@
 
 node {
 
-	
-	/*def DOTNET_PATH = '/home/ec2-user/dotnet'*/
 	def DOTNET_PATH ='/usr/share/dotnet'
 	def FUNCTION_NAME = 'lambdademo'
 	def APP_MAIN_FOLDER = 'lambdademo'
@@ -51,7 +49,7 @@ node {
 	
 		sh "echo 'about to deploy lambda'"		
 		dir("${APP_MAIN_FOLDER}") {
-			sh "$$DOTNET_PATH/dotnet-lambda deploy-function --function-runtime dotnetcore2.1 --function-name ${FUNCTION_NAME}  --function-memory-size 256 --function-timeout 30 --function-role mydotnetroll --function-handler ${FUNCTION_NAME}::${FUNCTION_NAME}.LambdaEntryPoint::FunctionHandlerAsync --disable-interactive true"
+			sh "$DOTNET_PATH/dotnet-lambda deploy-function --function-runtime dotnetcore2.1 --function-name ${FUNCTION_NAME}  --function-memory-size 256 --function-timeout 30 --function-role mydotnetroll --function-handler ${FUNCTION_NAME}::${FUNCTION_NAME}.LambdaEntryPoint::FunctionHandlerAsync --disable-interactive true"
 			
 			sh "echo 'after deploy-function'"						
 			
