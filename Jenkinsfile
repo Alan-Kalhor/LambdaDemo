@@ -2,7 +2,8 @@
 node {
 
 	
-	def DOTNET_PATH = '/home/ec2-user/dotnet'
+	/*def DOTNET_PATH = '/home/ec2-user/dotnet'*/
+	def DOTNET_PATH ='/usr/share/dotnet'
 	def FUNCTION_NAME = 'lambdademo'
 	def APP_MAIN_FOLDER = 'lambdademo'
 	def S3_BUCKET = "s3.alankalhor.${FUNCTION_NAME}"
@@ -34,11 +35,11 @@ node {
 	
 
 	stage('Deploy') {
-	
+/*	
 		env.DOTNET_ROOT = "/usr/share/dotnet"
 		env.PATH = "$PATH:/usr/share/dotnet"
-
-		sh "sudo dotnet-lambda list-functions"
+*/
+		sh "sudo $DOTNET_PATH/dotnet-lambda list-functions"
 		
 		sh "echo 'about to create s3'"		
 		try {
@@ -50,8 +51,7 @@ node {
 	
 		sh "echo 'about to deploy lambda'"		
 		dir("${APP_MAIN_FOLDER}") {
-			//sh "$DOTNET_PATH/dotnet-lambda deploy-function DotNetCoreWithTest1 --function-role JenkinsBuildRole"
-			sh "$dotnet-lambda deploy-function --function-runtime dotnetcore2.1 --function-name ${FUNCTION_NAME}  --function-memory-size 256 --function-timeout 30 --function-role mydotnetroll --function-handler ${FUNCTION_NAME}::${FUNCTION_NAME}.LambdaEntryPoint::FunctionHandlerAsync --disable-interactive true"
+			sh "$$DOTNET_PATH/dotnet-lambda deploy-function --function-runtime dotnetcore2.1 --function-name ${FUNCTION_NAME}  --function-memory-size 256 --function-timeout 30 --function-role mydotnetroll --function-handler ${FUNCTION_NAME}::${FUNCTION_NAME}.LambdaEntryPoint::FunctionHandlerAsync --disable-interactive true"
 			
 			sh "echo 'after deploy-function'"						
 			
